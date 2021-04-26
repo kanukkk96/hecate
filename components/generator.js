@@ -305,9 +305,9 @@
                         "name": "ARRIVAL",
                         "locked": true,
                         "dimensions": {
-                            "x": 6.255449295043945,
-                            "y": 21.197998046875,
-                            "z": 4.94197416305542
+                            "x": 6.3025,
+                            "y": 7.6355,
+                            "z": 4.9420
                         },
                         "rotation": Quat.fromVec3Radians( {"x": 0.0, "y": -angleRad, "z": 0.0} ),
                         "position": positionZero,
