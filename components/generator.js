@@ -23,6 +23,10 @@
     var hecateArrivalPlatformModelUrl = ROOT + "hecate_origine.fbx";
     var hecateDeadEndModelUrl = ROOT + "deadend.fbx";
     var hecateBuildingdModelUrl = ROOT + "hecate_Building_Wothal-B.fbx";
+    var hecateAirSoundUrl = ROOT + "air.mp3";
+    var airSound;
+    var airSoundInjector = Uuid.NULL;
+    var AIR_SOUND_VOLUME = 0.3;
     var hecateSkyUrl = ROOT + "sky.jpg";     
     var hecateMetalNormalUrl = ROOT + "metalNormal512c.jpg";
     var imagePlaceHolderUrl = ROOT + "placeholder.jpg";
@@ -40,7 +44,9 @@
     
     this.preload = function(entityID) {
         thisEntity = entityID;
-
+        
+        airSound = SoundCache.getSound(hecateAirSoundUrl);
+        
         var properties = Entities.getEntityProperties(entityID, ["position"]);
         positionZero = properties.position;
         
@@ -48,7 +54,26 @@
         frequentPlaces = getFrequentPlaces(placeHistorySettingValue.visitedPlacesHistory);
         
         getPlacesContent(placeApiUrl + "&acash=" + Math.floor(Math.random() * 999999));
+        
+        if (airSound.downloaded) {
+            playAirSound();
+        } else {
+            airSound.ready.connect(onSoundReady);
+        }
     };    
+
+    function onSoundReady() {
+        airSound.ready.disconnect(onSoundReady);
+        playAirSound();
+    }
+    
+    function playAirSound() {
+        airSoundInjector = Audio.playSound(airSound, {
+            "loop": true,
+            "localOnly": true,
+            "volume": AIR_SOUND_VOLUME
+        });
+    }
     
     function getPlacesContent(apiUrl) {
         placesHttpRequest = new XMLHttpRequest();
@@ -748,5 +773,11 @@
         });
         return count;
     }
+
+    this.unload = function(entityID) {
+        if (airSoundInjector !== Uuid.NULL) {
+            airSoundInjector.stop();
+        }
+    };  
 
 })
