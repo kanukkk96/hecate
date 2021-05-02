@@ -740,9 +740,9 @@
                 "visible": true,
                 "name": "PORTAL_BACK",
                 "dimensions": {
-                    "x": 2,
+                    "x": 1.5,
                     "y": 4,
-                    "z": 2
+                    "z": 1.5
                 },
                 "localRotation": {
                     "x": 0,
@@ -752,8 +752,8 @@
                 },
                 "Position": {
                     "x": 0.0,
-                    "y": 2.0,
-                    "z": 0.0
+                    "y": 3.0,
+                    "z": 3.0
                 },                    
                 "grab": {
                     "grabbable": false
