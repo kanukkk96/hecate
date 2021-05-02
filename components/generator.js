@@ -744,13 +744,8 @@
                     "y": 4,
                     "z": 1.5
                 },
-                "localRotation": {
-                    "x": 0,
-                    "y": 0.7071067690849304,
-                    "z": 0,
-                    "w": 0.7071067690849304
-                },
-                "position": Vec3.sum(positionZero, {"x": 0.0, "y": 3.0, "z": 3.0}),                   
+                "rotation": Quat.fromVec3Radians( {"x": 0.0, "y": -angleRad, "z": 0.0} ),
+                "position": Vec3.sum(positionZero, Vec3.multiplyQbyV(Quat.fromVec3Radians( {"x": 0.0, "y": -angleRad, "z": 0.0} ),{"x": 0.0, "y": 3.0, "z": 3.0})),                   
                 "grab": {
                     "grabbable": false
                 },
