@@ -750,11 +750,7 @@
                     "z": 0,
                     "w": 0.7071067690849304
                 },
-                "Position": {
-                    "x": 0.0,
-                    "y": 3.0,
-                    "z": 3.0
-                },                    
+                "position": Vec3.sum(positionZero, {"x": 0.0, "y": 3.0, "z": 3.0}),                   
                 "grab": {
                     "grabbable": false
                 },
