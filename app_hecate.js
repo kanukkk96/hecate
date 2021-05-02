@@ -15,7 +15,7 @@
     var ROOT = Script.resolvePath('').split(jsMainFileName)[0];
     var teleporterSoundFileUrl = ROOT + "components/tpsound.mp3";
     var teleportSound = SoundCache.getSound(teleporterSoundFileUrl);
-    var APP_NAME = "VR GOTO"; 
+    var APP_NAME = "3D GOTO"; 
     var APP_ICON_INACTIVE = ROOT + "components/appicon_i.png";
     var APP_ICON_ACTIVE = ROOT + "components/appicon_a.png";
     
