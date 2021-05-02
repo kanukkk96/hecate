@@ -359,7 +359,38 @@
                             "grabbable": false
                         },
                         "shape": "Cube",
-                        },"domain");                    
+                        },"domain");
+                        
+                     var textBackId = Entities.addEntity({
+                        "type": "Text",
+                        "locked": true,
+                        "name": "BACK_TEXT",
+                        "dimensions": {
+                            "x": 0.9366,
+                            "y": 1.8317,
+                            "z": 0.01
+                        },
+                        "rotation": Quat.fromVec3Radians( {"x": 0.0, "y": -angleRad, "z": 90.0} ),
+                        "position": Vec3.sum(positionZero, Vec3.multiplyQbyV(Quat.fromVec3Radians( {"x": 0.0, "y": -angleRad, "z": 0.0} ),{"x": -2.5, "y": 2.0, "z": 0.0})),
+                        "grab": {
+                            "grabbable": false
+                        },
+                        "text": "BACK",
+                        "textColor": {
+                            "red": 0,
+                            "green": 128,
+                            "blue": 255
+                        }
+                        "lineHeight": 0.3,
+                        "backgroundAlpha": 0.0,
+                        "topMargin": 0.02,
+                        "rightMargin": 0.02,
+                        "leftMargin": 0.02,
+                        "bottomMargin": 0.02,
+                        "unlit": true,
+                        "textEffectThickness": 0.25,
+                        "alignment": "center"
+                        },"domain");
                 }
                     
             }
