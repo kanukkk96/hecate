@@ -366,11 +366,11 @@
                         "locked": true,
                         "name": "BACK_TEXT",
                         "dimensions": {
-                            "x": 0.9366,
-                            "y": 1.8317,
+                            "x": 1,
+                            "y": 0.5,
                             "z": 0.01
                         },
-                        "rotation": Quat.fromVec3Radians( {"x": 0.0, "y": -angleRad, "z": 0.0} ),
+                        "rotation": Quat.fromVec3Radians( {"x": 0.0, "y": -angleRad + Math.PI, "z": (Math.PI/2)} ),
                         "position": Vec3.sum(positionZero, Vec3.multiplyQbyV(Quat.fromVec3Radians( {"x": 0.0, "y": -angleRad, "z": 0.0} ),{"x": -2.5, "y": 2.0, "z": 0.0})),
                         "grab": {
                             "grabbable": false
