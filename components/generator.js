@@ -30,7 +30,8 @@
     var hecateSkyUrl = ROOT + "sky.jpg";     
     var hecateMetalNormalUrl = ROOT + "metalNormal512c.jpg";
     var imagePlaceHolderUrl = ROOT + "placeholder.jpg";
-    var tpScriptUrl = ROOT + "teleporter.js?version=" + Math.floor(Math.random() * 65000);    
+    var tpScriptUrl = ROOT + "teleporter.js?version=" + Math.floor(Math.random() * 65000);
+    var backScriptUrl = ROOT + "back.js";    
     var thisEntity = Uuid.NULL;
     var positionZero;
     var placeHistorySettingValue;
@@ -730,6 +731,40 @@
             "position": positionZero,
             "rotation": Quat.fromVec3Radians( {"x": 0.0, "y": sunOrientation, "z": 0.0} )
         }, "domain");
+        
+        //BACK
+        if (location.canGoBack()) {
+            var tpBackId = Entities.addEntity({                
+                "type": "Box",
+                "locked": true,
+                "visible": true,
+                "name": "PORTAL_BACK",
+                "dimensions": {
+                    "x": 2,
+                    "y": 4,
+                    "z": 2
+                },
+                "localRotation": {
+                    "x": 0,
+                    "y": 0.7071067690849304,
+                    "z": 0,
+                    "w": 0.7071067690849304
+                },
+                "Position": {
+                    "x": 0.0,
+                    "y": 2.0,
+                    "z": 0.0
+                },                    
+                "grab": {
+                    "grabbable": false
+                },
+                "script": backScriptUrl,
+                "shape": "Cube",
+                "collisionless": true,
+                "ignoreForCollisions": true
+                },"domain");
+            
+        }
         
         //Buildings
         var nbrBuidling = Math.floor(Math.random() * 17) + 3;
