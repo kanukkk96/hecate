@@ -370,8 +370,8 @@
                             "y": 0.5,
                             "z": 0.01
                         },
-                        "rotation": Quat.fromVec3Radians( {"x": 0.0, "y": -angleRad + Math.PI, "z": (Math.PI/2)} ),
-                        "position": Vec3.sum(positionZero, Vec3.multiplyQbyV(Quat.fromVec3Radians( {"x": 0.0, "y": -angleRad, "z": 0.0} ),{"x": -2.5, "y": 2.0, "z": 0.0})),
+                        "rotation": Quat.fromVec3Radians( {"x": 0.0, "y": -angleRad + Math.PI, "z": 0.0} ),
+                        "position": Vec3.sum(positionZero, Vec3.multiplyQbyV(Quat.fromVec3Radians( {"x": 0.0, "y": -angleRad, "z": 0.0} ),{"x": -2.0, "y": 0.6, "z": 0.0})),
                         "grab": {
                             "grabbable": false
                         },
@@ -389,7 +389,9 @@
                         "bottomMargin": 0.02,
                         "unlit": true,
                         "textEffectThickness": 0.25,
-                        "alignment": "center"
+                        "alignment": "center",
+                        "collisionless": true,
+                        "ignoreForCollisions": true                        
                         },"domain");
                 }
                     
