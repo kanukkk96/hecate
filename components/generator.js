@@ -319,6 +319,32 @@
                         "modelURL": hecateArrivalPlatformModelUrl,
                         "useOriginalPivot": true
                     },"domain");
+                    
+                //BACK
+                if (location.canGoBack()) {
+                    var tpBackId = Entities.addEntity({                
+                        "type": "Box",
+                        "locked": true,
+                        "visible": true,
+                        "name": "PORTAL_BACK",
+                        "dimensions": {
+                            "x": 1.5,
+                            "y": 4,
+                            "z": 1.5
+                        },
+                        "rotation": Quat.fromVec3Radians( {"x": 0.0, "y": -angleRad, "z": 0.0} ),
+                        "position": Vec3.sum(positionZero, Vec3.multiplyQbyV(Quat.fromVec3Radians( {"x": 0.0, "y": -angleRad, "z": 0.0} ),{"x": -3.0, "y": 2.0, "z": 0.0})),                   
+                        "grab": {
+                            "grabbable": false
+                        },
+                        "script": backScriptUrl,
+                        "shape": "Cube",
+                        "collisionless": true,
+                        "ignoreForCollisions": true
+                        },"domain");
+                    
+                }
+                    
             }
 
             //Material
@@ -731,31 +757,6 @@
             "position": positionZero,
             "rotation": Quat.fromVec3Radians( {"x": 0.0, "y": sunOrientation, "z": 0.0} )
         }, "domain");
-        
-        //BACK
-        if (location.canGoBack()) {
-            var tpBackId = Entities.addEntity({                
-                "type": "Box",
-                "locked": true,
-                "visible": true,
-                "name": "PORTAL_BACK",
-                "dimensions": {
-                    "x": 1.5,
-                    "y": 4,
-                    "z": 1.5
-                },
-                "rotation": Quat.fromVec3Radians( {"x": 0.0, "y": -angleRad, "z": 0.0} ),
-                "position": Vec3.sum(positionZero, Vec3.multiplyQbyV(Quat.fromVec3Radians( {"x": 0.0, "y": -angleRad, "z": 0.0} ),{"x": -3.0, "y": 2.0, "z": 0.0})),                   
-                "grab": {
-                    "grabbable": false
-                },
-                "script": backScriptUrl,
-                "shape": "Cube",
-                "collisionless": true,
-                "ignoreForCollisions": true
-                },"domain");
-            
-        }
         
         //Buildings
         var nbrBuidling = Math.floor(Math.random() * 17) + 3;
