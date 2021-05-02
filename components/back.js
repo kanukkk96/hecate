@@ -23,19 +23,19 @@
     
     this.preload = function(entityID) {
         teleportSound = SoundCache.getSound(teleporterSoundFileUrl);
-        if (location.canGoBack()) {
-            //effect
-        }
+        
+        //effect
+        
     }
 
     this.enterEntity = function(entityID) {
-        if (location.canGoBack()) {
-            playSound();
+        
+        playSound();
 
-            var timer = Script.setTimeout(function () {
-                location.goBack();
-            }, 3000);            
-        } 
+        var timer = Script.setTimeout(function () {
+            location.goBack();
+        }, 3000);            
+         
       
     }; 
     
