@@ -741,6 +741,7 @@
         var skyZoneId = Entities.addEntity({
             "type": "Zone",
             "name": "SKY",
+            "locked": true,
             "dimensions": {
                 "x": 10000,
                 "y": 2000,
@@ -821,6 +822,7 @@
             
             var buildingId = Entities.addEntity({
                     "type": "Model",
+                    "locked": true,
                     "name": "BUIDING-" + i,
                     "dimensions": {
                         "x": 328.3628845214844,
