@@ -380,7 +380,7 @@
                             "red": 0,
                             "green": 128,
                             "blue": 255
-                        }
+                        },
                         "lineHeight": 0.3,
                         "backgroundAlpha": 0.0,
                         "topMargin": 0.02,
