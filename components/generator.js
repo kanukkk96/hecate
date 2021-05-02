@@ -325,7 +325,7 @@
                     var tpBackId = Entities.addEntity({                
                         "type": "Box",
                         "locked": true,
-                        "visible": true,
+                        "visible": false,
                         "name": "PORTAL_BACK",
                         "dimensions": {
                             "x": 1.5,
@@ -342,7 +342,24 @@
                         "collisionless": true,
                         "ignoreForCollisions": true
                         },"domain");
-                    
+                        
+                    var tpBackStopperId = Entities.addEntity({                
+                        "type": "Box",
+                        "locked": true,
+                        "visible": true,
+                        "name": "PORTAL_BACK_STOPPER",
+                        "dimensions": {
+                            "x": 0.5,
+                            "y": 4,
+                            "z": 1.5
+                        },
+                        "rotation": Quat.fromVec3Radians( {"x": 0.0, "y": -angleRad, "z": 0.0} ),
+                        "position": Vec3.sum(positionZero, Vec3.multiplyQbyV(Quat.fromVec3Radians( {"x": 0.0, "y": -angleRad, "z": 0.0} ),{"x": -3.5, "y": 2.0, "z": 0.0})),                   
+                        "grab": {
+                            "grabbable": false
+                        },
+                        "shape": "Cube",
+                        },"domain");                    
                 }
                     
             }
