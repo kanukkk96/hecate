@@ -346,7 +346,7 @@
                     var tpBackStopperId = Entities.addEntity({                
                         "type": "Box",
                         "locked": true,
-                        "visible": true,
+                        "visible": false,
                         "name": "PORTAL_BACK_STOPPER",
                         "dimensions": {
                             "x": 0.5,
