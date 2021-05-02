@@ -30,6 +30,7 @@
     var hecateSkyUrl = ROOT + "sky.jpg";     
     var hecateMetalNormalUrl = ROOT + "metalNormal512c.jpg";
     var imagePlaceHolderUrl = ROOT + "placeholder.jpg";
+    var particleBackUrl = ROOT + "particle.png";    
     var tpScriptUrl = ROOT + "teleporter.js?version=" + Math.floor(Math.random() * 65000);
     var backScriptUrl = ROOT + "back.js";    
     var thisEntity = Uuid.NULL;
@@ -393,6 +394,72 @@
                         "collisionless": true,
                         "ignoreForCollisions": true                        
                         },"domain");
+                        
+                    var backEffectId = Entities.addEntity({
+                        "type": "ParticleEffect",
+                        "position": Vec3.sum(positionZero, Vec3.multiplyQbyV(Quat.fromVec3Radians( {"x": 0.0, "y": -angleRad, "z": 0.0} ),{"x": -2.5, "y": 2.0, "z": 0.0})),
+                        "locked": true,
+                        "name": "BACK_EFFECT",
+                        "dimensions": {
+                            "x": 3.75600004196167,
+                            "y": 3.75600004196167,
+                            "z": 3.75600004196167
+                        },
+                        "grab": {
+                            "grabbable": false
+                        },
+                        "shapeType": "ellipsoid",
+                        "color": {
+                            "red": 0,
+                            "green": 119,
+                            "blue": 255
+                        },
+                        "alpha": 0.5,
+                        "textures": particleBackUrl,
+                        "maxParticles": 100,
+                        "lifespan": 4,
+                        "emitRate": 25,
+                        "emitSpeed": 0,
+                        "speedSpread": 0.11999999731779099,
+                        "emitOrientation": {
+                            "x": 0,
+                            "y": 0,
+                            "z": 0,
+                            "w": 1
+                        },
+                        "emitDimensions": {
+                            "x": 0.10000000149011612,
+                            "y": 0.10000000149011612,
+                            "z": 0.10000000149011612
+                        },
+                        "polarFinish": 3.1415927410125732,
+                        "emitAcceleration": {
+                            "x": 0,
+                            "y": 0,
+                            "z": 0
+                        },
+                        "particleRadius": 1.2000000476837158,
+                        "radiusSpread": 0.10000000149011612,
+                        "radiusStart": 0.20000000298023224,
+                        "radiusFinish": 1.2000000476837158,
+                        "colorStart": {
+                            "red": 219,
+                            "green": 236,
+                            "blue": 255
+                        },
+                        "colorFinish": {
+                            "red": 0,
+                            "green": 13,
+                            "blue": 255
+                        },
+                        "alphaSpread": 0.10000000149011612,
+                        "alphaStart": 0.800000011920929,
+                        "alphaFinish": null,
+                        "emitterShouldTrail": true,
+                        "spinSpread": 0.17000000178813934,
+                        "spinStart": -1.5700000524520874,
+                        "spinFinish": 1.5700000524520874
+                    }, "domain");    
                 }
                     
             }

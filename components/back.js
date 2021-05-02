@@ -24,8 +24,6 @@
     this.preload = function(entityID) {
         teleportSound = SoundCache.getSound(teleporterSoundFileUrl);
         
-        //effect
-        
     }
 
     this.enterEntity = function(entityID) {
