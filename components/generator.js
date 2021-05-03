@@ -180,7 +180,7 @@
                     }                    
                     
                     var portal = {
-                        "order": score + places[i].name,
+                        "order": zeroPad(score,5) + places[i].name,
                         "category": category,
                         "accessStatus": accessStatus,
                         "name": places[i].name,
@@ -205,7 +205,7 @@
             randomItem = Math.floor(Math.random() * portalList.length);
             if (portalList[randomItem].category === "SILVER") {
                 portalList[randomItem].category = "RUBY";
-                portalList[randomItem].order = "1A";
+                portalList[randomItem].order = "00001A";
                 break;
             }
             n++;
@@ -228,6 +228,11 @@
             return -1;
         }
         return 0;
+    }
+
+    function zeroPad(num, places) {
+        var zero = places - num.toString().length + 1;
+        return Array(+(zero > 0 && zero)).join("0") + num;
     }
     
     //Generate the Portals
