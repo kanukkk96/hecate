@@ -555,7 +555,7 @@
                     break;                    
             }
             
-            print("SCORE: " + portalList[i].score + " | CATEGORY: " + portalList[i].category);
+            print("SCORE: " + portalList[i].order + " | CATEGORY: " + portalList[i].category);
             
             var materialDataWalls = {
                "materialVersion":1,
