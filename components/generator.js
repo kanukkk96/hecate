@@ -43,6 +43,7 @@
     var MAX_PLACE_HISTORY_ELEMENTS = 30;
     var STEP_HEIGHT = 0.2;
     var PARK_INTERVAL = 22;
+    var PERSISTENCE_ORDERING_CYCLE = 5 * 24 * 3600 * 1000; //5 days
     
     this.preload = function(entityID) {
         thisEntity = entityID;
@@ -180,7 +181,7 @@
                     }                    
                     
                     var portal = {
-                        "order": zeroPad(score,5) + places[i].name,
+                        "order": zeroPad(score,5) + "_" + getSeededRandomForString(places[i].name),
                         "category": category,
                         "accessStatus": accessStatus,
                         "name": places[i].name,
@@ -205,7 +206,7 @@
             randomItem = Math.floor(Math.random() * portalList.length);
             if (portalList[randomItem].category === "SILVER") {
                 portalList[randomItem].category = "RUBY";
-                portalList[randomItem].order = "00001A";
+                portalList[randomItem].order = "00001A_000";
                 break;
             }
             n++;
@@ -918,7 +919,6 @@
         
     }
     
-
     function getFrequentPlaces(list) {
         var count = {};
         list.forEach(function(list) {
@@ -926,6 +926,35 @@
         });
         return count;
     }
+
+    //####### seed random library ################
+    Math.seed = 75;
+
+    Math.seededRandom = function(max, min) {
+        max = max || 1;
+        min = min || 0;
+        Math.seed = (Math.seed * 9301 + 49297) % 233280;
+        var rnd = Math.seed / 233280;
+        return min + rnd * (max - min);
+    }
+
+    function getSringScore(str) {
+        var score = 0;
+        for (var j = 0; j < str.length; j++){
+            score += str.charAt(j).charCodeAt(0) - ('a').charCodeAt(0) + 1;
+        }
+        return score;
+    }
+
+    function getSeededRandomForString(str) {
+        var score = getSringScore(str);
+        var d = new Date();
+        var n = d.getTime();
+        var currentSeed = Math.floor(n / PERSISTENCE_ORDERING_CYCLE);
+        Math.seed = score * currentSeed;
+        return zeroPad(Math.floor(Math.seededRandom() * 1000),3);
+    }
+    //####### END of seed random library ################
 
     this.unload = function(entityID) {
         if (airSoundInjector !== Uuid.NULL) {
