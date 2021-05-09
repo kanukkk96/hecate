@@ -286,7 +286,7 @@
                             "y": 0.9,
                             "z": 0.01
                         },
-                        "localPosition": {"x": 0, "y": 0, "z": 0},
+                        "localPosition": {"x": 0.7, "y": 0, "z": 0},
                         "localRotation": Quat.fromVec3Radians( {"x": 0, "y": 0, "z": 0} ),
                         "grab": {
                             "grabbable": false
