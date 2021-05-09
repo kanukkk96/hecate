@@ -279,14 +279,15 @@
                 
                 var areaTextId = Entities.addEntity({
                         "type": "Text",
+                        "parentID": parkId,
                         "name": "AREA " + placeArea,
                         "dimensions": {
                             "x": 4,
                             "y": 0.9,
                             "z": 0.01
                         },
-                        "position": Vec3.sum(positionZero, relativePosition),
-                        "rotation": Quat.fromVec3Radians( {"x": (-Math.PI/2), "y": -angleRad + Math.PI, "z": (Math.PI/2)} ),
+                        "localPosition": {"x": 0, "y": 0, "z": 0},
+                        "localRotation": Quat.fromVec3Radians( {"x": (-Math.PI/2), "y": 0, "z": (Math.PI/2)} ),
                         "grab": {
                             "grabbable": false
                         },
