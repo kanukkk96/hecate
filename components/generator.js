@@ -286,7 +286,7 @@
                             "z": 0.01
                         },
                         "position": Vec3.sum(positionZero, relativePosition),
-                        "rotation": Quat.fromVec3Radians( {"x": Math.PI/2, "y": -angleRad + Math.PI, "z": 0.0} ),
+                        "rotation": Quat.fromVec3Radians( {"x": (-Math.PI/2), "y": -angleRad + Math.PI, "z": (Math.PI/2)} ),
                         "grab": {
                             "grabbable": false
                         },
