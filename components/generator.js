@@ -281,12 +281,12 @@
                         "type": "Text",
                         "name": "AREA " + placeArea,
                         "dimensions": {
-                            "x": 3,
+                            "x": 4,
                             "y": 0.9,
                             "z": 0.01
                         },
                         "position": Vec3.sum(positionZero, relativePosition),
-                        "rotation": Quat.fromVec3Radians( {"x": 0.0, "y": -angleRad + Math.PI, "z": 0.0} ),
+                        "rotation": Quat.fromVec3Radians( {"x": Math.PI/2, "y": -angleRad + Math.PI, "z": 0.0} ),
                         "grab": {
                             "grabbable": false
                         },
@@ -305,7 +305,7 @@
                         "collisionless": true,
                         "ignoreForCollisions": true
                     }, "domain");
-                    print("test: " + areaTextId);
+
                 coy = coy - STEP_HEIGHT;                
             }
             
