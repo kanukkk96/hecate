@@ -244,11 +244,13 @@
         var corridorFactor = 1.7;
         var coy = 0.0;
         
+        var placeArea = 0;
         for (var i = 0;i < portalList.length; i++) {
             
             var numbrePossiblePerRing, cox, coz, relativePosition;
             
             if ((i%PARK_INTERVAL) === 0 && i !== 0) {
+                placeArea++;
                 numbrePossiblePerRing = (radius * 2 * Math.PI) / espacement;
                 radius = radius + (espacement/numbrePossiblePerRing) * corridorFactor;
                 angleRad = angleRad + ((2 * Math.PI)/numbrePossiblePerRing);
@@ -275,10 +277,39 @@
                     "useOriginalPivot": true                
                     }, "domain");
                 
+                var areaTextId = Entities.addEntity({
+                        "type": "Text",
+                        "name": "AREA " + placeArea,
+                        "dimensions": {
+                            "x": 3,
+                            "y": 0.9,
+                            "z": 0.01
+                        },
+                        "position": Vec3.sum(positionZero, relativePosition),
+                        "rotation": Quat.fromVec3Radians( {"x": 0.0, "y": -angleRad + Math.PI, "z": 0.0} ),
+                        "grab": {
+                            "grabbable": false
+                        },
+                        "textColor": {
+                            "red": 255,
+                            "green": 200,
+                            "blue": 0
+                        },                        
+                        "text": "AREA " + placeArea,
+                        "lineHeight": 0.6,
+                        "backgroundAlpha": 0.0,
+                        "topMargin": 0.0,
+                        "unlit": false,
+                        "alignment": "center",
+                        "locked": true,
+                        "collisionless": true,
+                        "ignoreForCollisions": true
+                    }, "domain");
+                    print("test: " + areaTextId);
                 coy = coy - STEP_HEIGHT;                
             }
             
-            
+            placeArea++;
             numbrePossiblePerRing = (radius * 2 * Math.PI) / espacement;
             radius = radius + (espacement/numbrePossiblePerRing) * corridorFactor;
             angleRad = angleRad + ((2 * Math.PI)/numbrePossiblePerRing);
