@@ -505,7 +505,7 @@
                 //Install
                 var installed = isApplicationInstalled();
                 if (installed) { //############################################# !
-                    print("V8");
+                    print("V9 ###########################################");
                     var installerID = Entities.addEntity({
                             "type": "Image",
                             "name": "INSTALL",
@@ -514,7 +514,7 @@
                                 "y": 0.8,
                                 "z": 0.01
                             },
-                            "rotation": Quat.fromVec3Radians( {"x": Math.PI, "y": (Math.PI/8) - angleRad, "z": Math.PI} ),
+                            "rotation": Quat.fromVec3Radians( {"x": -Math.PI, "y": (Math.PI/16) - angleRad, "z": Math.PI} ),
                             "position": Vec3.sum(positionZero, Vec3.multiplyQbyV(Quat.fromVec3Radians( {"x": 0.0, "y": -angleRad, "z": 0.0} ),{"x": 1.6, "y": 2.0, "z": 1.0})),
                             "grab": {
                                 "grabbable": false
