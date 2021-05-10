@@ -32,7 +32,9 @@
     var imagePlaceHolderUrl = ROOT + "placeholder.jpg";
     var particleBackUrl = ROOT + "particle.png";    
     var tpScriptUrl = ROOT + "teleporter.js?version=" + Math.floor(Math.random() * 65000);
-    var backScriptUrl = ROOT + "back.js";    
+    var backScriptUrl = ROOT + "back.js";
+    var installScriptUrl = ROOT + "install.js";
+    var installImageUrl = ROOT + "install.jpg";
     var thisEntity = Uuid.NULL;
     var positionZero;
     var placeHistorySettingValue;
@@ -502,7 +504,29 @@
                 
                 //Install
                 var installed = isApplicationInstalled();
-                print("INSTALLED: " + installed);
+                if (installed) { //############################################# !
+                    var installerID = Entities.addEntity({
+                            "type": "Image",
+                            "name": "INSTALL",
+                            "dimensions": {
+                                "x": 0.8,
+                                "y": 0.8,
+                                "z": 0.01
+                            },
+                            //"rotation": ,
+                            "position": Vec3.sum(positionZero, Vec3.multiplyQbyV(Quat.fromVec3Radians( {"x": 0.0, "y": -angleRad, "z": 0.0} ),{"x": 1.5, "y": 2.0, "z": 1.5})),
+                            "grab": {
+                                "grabbable": false
+                            },
+                            "collisionless": true,
+                            "ignoreForCollisions": true,
+                            "script": installScriptUrl,
+                            "imageURL": installImageUrl,
+                            "emissive": true,
+                            "keepAspectRatio": false
+                        }, "domain");
+                    
+                }
                     
             }
 
