@@ -992,6 +992,7 @@
     //####### END of seed random library ################
 
     function isApplicationInstalled() {
+        print("Been there!");
         var running = false;
         var currentlyRunningScripts = ScriptDiscoveryService.getRunning();
         print("SCRIPTS: " + JSON.stringify(currentlyRunningScripts));
