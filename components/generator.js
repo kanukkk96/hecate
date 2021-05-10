@@ -505,6 +505,7 @@
                 //Install
                 var installed = isApplicationInstalled();
                 if (installed) { //############################################# !
+                    print("V8");
                     var installerID = Entities.addEntity({
                             "type": "Image",
                             "name": "INSTALL",
@@ -525,7 +526,6 @@
                             "emissive": true,
                             "keepAspectRatio": false
                         }, "domain");
-                        print("V8");
                     
                 }
                     
