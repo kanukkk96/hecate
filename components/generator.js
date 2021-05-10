@@ -995,7 +995,7 @@
     function isApplicationInstalled() {
         var running = false;
         var currentlyRunningScripts = JSON.stringify(ScriptDiscoveryService.getRunning());
-        if (currentlyRunningScripts.indexOf("app_hecate.js") >== 0){
+        if (currentlyRunningScripts.indexOf("app_hecate.js") >= 0) {
             running = true;
         }
         return running;
