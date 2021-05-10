@@ -499,6 +499,9 @@
                         "spinFinish": 1.5700000524520874
                     }, "domain");    
                 }
+                
+                //Install
+                var installed = isApplicationInstalled();
                     
             }
 
@@ -987,6 +990,14 @@
         return zeroPad(Math.floor(Math.seededRandom() * 1000),3);
     }
     //####### END of seed random library ################
+
+    function isApplicationInstalled() {
+        var running = false;
+        var currentlyRunningScripts = ScriptDiscoveryService.getRunning();
+        print("SCRIPTS: " + JSON.stringify(currentlyRunningScripts));
+        
+        return running;
+    }
 
     this.unload = function(entityID) {
         if (airSoundInjector !== Uuid.NULL) {
