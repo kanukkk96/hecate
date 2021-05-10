@@ -513,7 +513,7 @@
                                 "y": 0.8,
                                 "z": 0.01
                             },
-                            "rotation": Quat.fromVec3Radians( {"x": Math.PI, "y": (Math.PI/6) - angleRad, "z": Math.PI} ),
+                            "rotation": Quat.fromVec3Radians( {"x": Math.PI, "y": (Math.PI/8) - angleRad, "z": Math.PI} ),
                             "position": Vec3.sum(positionZero, Vec3.multiplyQbyV(Quat.fromVec3Radians( {"x": 0.0, "y": -angleRad, "z": 0.0} ),{"x": 1.6, "y": 2.0, "z": 1.0})),
                             "grab": {
                                 "grabbable": false
@@ -525,6 +525,7 @@
                             "emissive": true,
                             "keepAspectRatio": false
                         }, "domain");
+                        print("V8");
                     
                 }
                     
