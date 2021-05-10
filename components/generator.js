@@ -502,6 +502,7 @@
                 
                 //Install
                 var installed = isApplicationInstalled();
+                print("INSTALLED: " + installed);
                     
             }
 
@@ -992,11 +993,11 @@
     //####### END of seed random library ################
 
     function isApplicationInstalled() {
-        print("Been there!");
         var running = false;
-        var currentlyRunningScripts = ScriptDiscoveryService.getRunning();
-        print("SCRIPTS: " + JSON.stringify(currentlyRunningScripts));
-        
+        var currentlyRunningScripts = JSON.stringify(ScriptDiscoveryService.getRunning());
+        if (currentlyRunningScripts.indexOf("app_hecate.js") >== 0){
+            running = true;
+        }
         return running;
     }
 
