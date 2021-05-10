@@ -504,10 +504,10 @@
                 
                 //Install
                 var installed = isApplicationInstalled();
-                if (installed) { //############################################# !
-                    print("V9 ###########################################");
+                if (!installed) {
                     var installerID = Entities.addEntity({
                             "type": "Image",
+                            "locked": false,
                             "name": "INSTALL",
                             "dimensions": {
                                 "x": 0.8,

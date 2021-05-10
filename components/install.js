@@ -13,6 +13,7 @@
 (function() {
 
     var MAX_CLICKABLE_DISTANCE_M = 10;
+    var appScriptUrl = "https://aleziakurdis.github.io/hecate/app_hecate.js";
 
     // Constructor
     var _this = null;
@@ -39,7 +40,8 @@
         mousePressOnEntity: function (entityID, event) {
             if (event.isPrimaryButton && 
                 Vec3.distance(MyAvatar.position, Entities.getEntityProperties(_this.entityID, ["position"]).position) <= MAX_CLICKABLE_DISTANCE_M) {
-                print("Clicked");
+                ScriptDiscoveryService.loadScript(appScriptUrl, true, false, false, true, false);
+                Entities.editEntity(entityID,{"position": {"x": 7000, "y": 7000, "z": 7000}, "visible": false});
             }
         },
 
