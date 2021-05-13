@@ -13,7 +13,8 @@
 (function(){ 
 
     //Fetch Data from Places API
-    var placeApiUrl = "https://metaverse.vircadia.com/live/api/v1/places?current_page=1&per_page=1000"; 
+    //var placeApiUrl = "https://metaverse.vircadia.com/live/api/v1/places?current_page=1&per_page=1000";
+    var placeApiUrl = "http://metaverse.bashora.com/loadtest/index.php?n=200";
     var placesHttpRequest = null;
     var placesData;
     var portalList = [];
@@ -170,7 +171,7 @@
                     
                     if (places[i].current_attendance > 0) {
                         category = "GOLD";
-                        if (places[i].current_attendance >= 1000) {
+                        if (places[i].domain.num_users >= places[i].domain.capacity) {
                             accessStatus = "FULL";
                         } else {
                             accessStatus = "PEOPLE";
@@ -194,7 +195,7 @@
                         "current_attendance": places[i].current_attendance,
                         "id": places[i].id,
                         "visibility": places[i].visibility,
-                        "capacity": 1000
+                        "capacity": places[i].domain.capacity
                     };
                     portalList.push(portal);   
                 }
