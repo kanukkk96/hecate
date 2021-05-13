@@ -13,8 +13,7 @@
 (function(){ 
 
     //Fetch Data from Places API
-    //var placeApiUrl = "https://metaverse.vircadia.com/live/api/v1/places?current_page=1&per_page=1000";
-    var placeApiUrl = "http://metaverse.bashora.com/loadtest/index.php?n=1000";
+    var placeApiUrl = "https://metaverse.vircadia.com/live/api/v1/places?current_page=1&per_page=1000";
     var placesHttpRequest = null;
     var placesData;
     var portalList = [];
