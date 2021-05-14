@@ -761,9 +761,9 @@
                 
                 //Capacity: portalList[i].capacity would be here.
                 if (portalList[i].capacity == 0) {
-                    descriptionText = descriptionText + "\nMaximal Capacity: " + "Unlimited";
+                    descriptionText = descriptionText + "\nCapacity: " + "Unlimited";
                 } else {
-                    descriptionText = descriptionText + "\nMaximal Capacity: " + portalList[i].capacity;
+                    descriptionText = descriptionText + "\nCapacity: " + portalList[i].capacity;
                 }
                 
                 descriptionText = descriptionText + "\n\nMaturity: " + portalList[i].maturity.toUpperCase();
