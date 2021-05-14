@@ -170,7 +170,7 @@
                     
                     if (places[i].current_attendance > 0) {
                         category = "GOLD";
-                        if (places[i].domain.num_users >= places[i].domain.capacity) {
+                        if (places[i].domain.num_users >= places[i].domain.capacity && places[i].domain.capacity !== 0) {
                             accessStatus = "FULL";
                         } else {
                             accessStatus = "PEOPLE";
