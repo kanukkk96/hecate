@@ -44,7 +44,7 @@
     var MIN_FREQUENCY_TO_BE_CONSIDERED = 3;
     var MAX_PLACE_HISTORY_ELEMENTS = 30;
     var STEP_HEIGHT = 0.2;
-    var PARK_INTERVAL = 22;
+    var PARK_INTERVAL = 19;
     var PERSISTENCE_ORDERING_CYCLE = 5 * 24 * 3600 * 1000; //5 days
     
     this.preload = function(entityID) {
