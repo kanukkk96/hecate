@@ -755,11 +755,16 @@
                 //By: author name would be added here
                 
                 descriptionText = descriptionText + "\n\nUsers: " + portalList[i].current_attendance;
-                if (portalList[i].current_attendance >= portalList[i].capacity) {
+                if (portalList[i].accessStatus === "FULL") {
                     descriptionText = descriptionText + " (FULL)";
                 }
                 
                 //Capacity: portalList[i].capacity would be here.
+                if (portalList[i].capacity == 0) {
+                    descriptionText = descriptionText + "\nMaximal Capacity: " + "Unlimited";
+                } else {
+                    descriptionText = descriptionText + "\nMaximal Capacity: " + portalList[i].capacity;
+                }
                 
                 descriptionText = descriptionText + "\n\nMaturity: " + portalList[i].maturity.toUpperCase();
                 
