@@ -812,7 +812,7 @@
                     "alignment": "left"
                     },"domain");
                 
-                if (portalList[i].category === "GOLD) {
+                if (portalList[i].category === "GOLD") {
                     var textNbrUserPortalId = Entities.addEntity({
                         "type": "Text",
                         "parentID": portalId,
