@@ -812,7 +812,7 @@
                     "alignment": "left"
                     },"domain");
                 
-                if (portalList[i].category === "GOLD") {
+                if (portalList[i].current_attendance > 0) {
                     var textNbrUserPortalId = Entities.addEntity({
                         "type": "Text",
                         "parentID": portalId,
@@ -847,6 +847,8 @@
                         "bottomMargin": 0.02,
                         "unlit": true,
                         "textEffectThickness": 0.25,
+                        "collisionless": true,
+                        "ignoreForCollisions": true,
                         "alignment": "center"
                         },"domain");                    
                 }
