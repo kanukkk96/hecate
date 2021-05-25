@@ -819,7 +819,7 @@
                         "locked": true,
                         "name": "PORTAL_NBR_USERS_TEXT - " + portalList[i].name,
                         "dimensions": {
-                            "x": 1.5,
+                            "x": 1.8,
                             "y": 1,
                             "z": 0.01
                         },
@@ -830,14 +830,15 @@
                             "w": 0.7071067690849304
                         },
                         "localPosition": {
-                            "x": -1.26,
-                            "y": 1.8763,
-                            "z": 0.0
+                            "x": 0.693,
+                            "y": 1.5,
+                            "z": 0.4587
                         },
                         "grab": {
                             "grabbable": false
                         },
                         "text": portalList[i].current_attendance,
+                        "textAlpha": 0.3,
                         "lineHeight": 0.6,
                         "backgroundAlpha": 0.0,
                         "topMargin": 0.02,
