@@ -776,7 +776,7 @@
                     descriptionText = "* FREQUENTLY VISITED *\n\n" + descriptionText;                     
                 }
                 
-                var textNamePortalId = Entities.addEntity({
+                var textDescPortalId = Entities.addEntity({
                     "type": "Text",
                     "parentID": portalId,
                     "locked": true,
@@ -811,7 +811,45 @@
                     "textEffectThickness": 0.25,
                     "alignment": "left"
                     },"domain");
-
+                
+                if (portalList[i].category === "GOLD) {
+                    var textNbrUserPortalId = Entities.addEntity({
+                        "type": "Text",
+                        "parentID": portalId,
+                        "locked": true,
+                        "name": "PORTAL_NBR_USERS_TEXT - " + portalList[i].name,
+                        "dimensions": {
+                            "x": 1.5,
+                            "y": 1,
+                            "z": 0.01
+                        },
+                        "localRotation": {
+                            "x": 0,
+                            "y": 0.7071067690849304,
+                            "z": 0,
+                            "w": 0.7071067690849304
+                        },
+                        "localPosition": {
+                            "x": -1.26,
+                            "y": 1.8763,
+                            "z": 0.0
+                        },
+                        "grab": {
+                            "grabbable": false
+                        },
+                        "text": portalList[i].current_attendance,
+                        "lineHeight": 0.6,
+                        "backgroundAlpha": 0.0,
+                        "topMargin": 0.02,
+                        "rightMargin": 0.02,
+                        "leftMargin": 0.02,
+                        "bottomMargin": 0.02,
+                        "unlit": true,
+                        "textEffectThickness": 0.25,
+                        "alignment": "center"
+                        },"domain");                    
+                }
+                
                 //TP
                 var tpData = {
                     "placeID": portalList[i].id,
