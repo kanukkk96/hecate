@@ -771,7 +771,7 @@
                 var descriptionText = portalList[i].description;
 
                 //By: author name would be added here
-                descriptionText = descriptionText + "\nManaged by: " + portalList[i].managers;
+                descriptionText = descriptionText + "\n\nManaged by: " + portalList[i].managers;
                 
                 descriptionText = descriptionText + "\n\nUsers: " + portalList[i].current_attendance;
                 if (portalList[i].accessStatus === "FULL") {
