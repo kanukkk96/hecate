@@ -194,7 +194,8 @@
                         "current_attendance": places[i].current_attendance,
                         "id": places[i].id,
                         "visibility": places[i].visibility,
-                        "capacity": places[i].domain.capacity
+                        "capacity": places[i].domain.capacity,
+                        "managers": getListFromArray(places[i].managers)
                     };
                     portalList.push(portal);   
                 }
@@ -215,6 +216,23 @@
         }
         
         portalList.sort(sortOrder);
+    }
+
+    function getListFromArray(dataArray) {
+        var dataList = "";
+        if (dataArray.length > 0) {
+            for (var k = 0; k < dataArray.length; k++) {
+                if (k !== 0) {
+                    dataList += ", "; 
+                }
+                dataList += dataArray[k];
+            }
+            if (dataArray.length > 1){
+                dataList += ".";
+            }
+        }
+        
+        return dataList;
     }
 
     function sortOrder(a, b) {
@@ -753,6 +771,7 @@
                 var descriptionText = portalList[i].description;
 
                 //By: author name would be added here
+                descriptionText = descriptionText + "\nManaged by: " + portalList[i].managers;
                 
                 descriptionText = descriptionText + "\n\nUsers: " + portalList[i].current_attendance;
                 if (portalList[i].accessStatus === "FULL") {
