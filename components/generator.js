@@ -293,6 +293,7 @@
                         "grabbable": false
                     },
                     "shapeType": "static-mesh",
+                    "script": ROOT + "areas/area_" + placeArea + ".js",
                     "modelURL": hecateParkModelUrl,
                     "useOriginalPivot": true                
                     }, "domain");
