@@ -64,14 +64,14 @@
             "parentID": entityID,
             "renderWithZones": [visibilityZoneId],
             "locked": true,            
-            "localPosition": {"x": 0.0, "y": 1.0, "z": 0.0},
+            "localPosition": {"x": 0.0, "y": 0.0, "z": 0.0},
             "localRotation": {"x": 0.0, "y": 0.0, "z": 0.0, "w": 1.0},
             "type": "Box",
             "shape": "Cube",
             "name": "Test_Custom Area",
             "dimensions": {
                 "x": 0.20000000298023224,
-                "y": 0.20000000298023224,
+                "y": 0.02,
                 "z": 0.20000000298023224
             },
             "grab": {
