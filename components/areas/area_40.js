@@ -66,22 +66,19 @@
             "locked": true,            
             "localPosition": {"x": 0.0, "y": 0.0, "z": 0.0},
             "localRotation": {"x": 0.0, "y": 0.0, "z": 0.0, "w": 1.0},
-            "type": "Box",
-            "shape": "Cube",
-            "name": "Test_Custom Area",
-            "dimensions": {
-                "x": 0.20000000298023224,
-                "y": 0.02,
-                "z": 0.20000000298023224
-            },
+            "name": "Area 40 - shop",
             "grab": {
                 "grabbable": false
             },
-            "color": {
-                "red": 255,
-                "green": 128,
-                "blue": 0
-            }
+            "type": "Model",
+            "dimensions": {
+                "x": 7.742076873779297,
+                "y": 3.875418186187744,
+                "z": 3.9102139472961426
+            },
+            "shapeType": "static-mesh",
+            "modelURL": CONTENT_BASE_PATH + "structure_area_40.fbx",
+            "useOriginalPivot": true
         },"domain");
         
         
