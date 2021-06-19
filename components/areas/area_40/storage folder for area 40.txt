@@ -1,3 +1,0 @@
-You can store you models, images and sound related to this area customization in this folder.
-Keep in mind that we want the content to be light.
-This means low polygone model, avoid textures (Material using only one small tilable normal map is good enough)
