@@ -234,9 +234,9 @@
         var millisecond = dateString.substr(20, 3);
         var fromTime = new Date(year, month, day, hour, minute, second, millisecond);
         //var fromTime = Date.parse("" + dateString);
-        
-        print("fromTime: " + fromTime);
-        var age = now - fromTime;
+        var from = fromTime.getTime();
+        print("from: " + from);
+        var age = now - from;
         return age;
     }
 
