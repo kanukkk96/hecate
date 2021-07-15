@@ -140,6 +140,8 @@
             }
             
             if ( places[i].domain.protocol_version === supportedProtocole ) {
+                var age = getAgeFromDateString(places[i].domain.time_of_last_heartbeat);
+                print("AGE: " + age);
                 if ( places[i].domain.active ) {
                     //visibility rules would be here
                         //visibility != "open" and "connections" while connected: score + 2
@@ -216,6 +218,14 @@
         }
         
         portalList.sort(sortOrder);
+    }
+
+    function getAgeFromDateString(dateString) {
+        var todayNow = new Date();
+        var now = todayNow.getTime();
+        var fromTime = Date.parse(dateString);
+        var age = now - fromTime;
+        return age;
     }
 
     function getListFromArray(dataArray) {
