@@ -225,6 +225,7 @@
         var todayNow = new Date();
         var now = todayNow.getTime();
         var fromTime = Date.parse("" + dateString);
+        print("fromTime: " + fromTime);
         var age = now - fromTime;
         return age;
     }
