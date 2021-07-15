@@ -224,10 +224,8 @@
         print("TIME: " + dateString);
         var todayNow = new Date();
         var now = todayNow.getTime();
-        //var fromTime = Date.parse(dateString);
-        var fromTime = new Date(dateString);
-        var from = fromTime.getTime();
-        var age = now;// - from;
+        var fromTime = Date.parse("" + dateString);
+        var age = now - fromTime;
         return age;
     }
 
