@@ -46,6 +46,7 @@
     var STEP_HEIGHT = 0.2;
     var PARK_INTERVAL = 19;
     var PERSISTENCE_ORDERING_CYCLE = 5 * 24 * 3600 * 1000; //5 days
+    var MAX_AGE_BEFORE_CONSIDER_OFFLINE = 600000; //10 minutes
     
     this.preload = function(entityID) {
         thisEntity = entityID;
@@ -142,7 +143,8 @@
             if ( places[i].domain.protocol_version === supportedProtocole ) {
                 var age = getAgeFromDateString(places[i].domain.time_of_last_heartbeat);
                 print("AGE: " + age);
-                if ( places[i].domain.active ) {
+                //if ( places[i].domain.active ) {
+                if ( age < MAX_AGE_BEFORE_CONSIDER_OFFLINE ) {
                     //visibility rules would be here
                         //visibility != "open" and "connections" while connected: score + 2
                         //visibility != "open" while NOT connected: score + 2
