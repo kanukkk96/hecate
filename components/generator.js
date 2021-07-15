@@ -224,7 +224,17 @@
         print("TIME: " + dateString);
         var todayNow = new Date();
         var now = todayNow.getTime();
-        var fromTime = Date.parse("" + dateString);
+        //YYYY-MM-DDThh:mm:ss:nnn
+        var year = dateString.substr(0, 4);
+        var month = dateString.substr(5, 2);
+        var day = dateString.substr(8, 2);
+        var hour = dateString.substr(11, 2);
+        var minute = dateString.substr(14, 2);
+        var second = dateString.substr(17, 2);
+        var millisecond = dateString.substr(20, 3);
+        var fromTime = new Date(year, month, day, hour, minute, second, millisecond);
+        //var fromTime = Date.parse("" + dateString);
+        
         print("fromTime: " + fromTime);
         var age = now - fromTime;
         return age;
