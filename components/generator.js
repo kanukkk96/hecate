@@ -142,7 +142,7 @@
             
             if ( places[i].domain.protocol_version === supportedProtocole ) {
                 var age = getAgeFromDateString(places[i].domain.time_of_last_heartbeat);
-                print("AGE: " + age);
+                //print("AGE: " + age);
                 //if ( places[i].domain.active ) {
                 if ( age < MAX_AGE_BEFORE_CONSIDER_OFFLINE ) {
                     //visibility rules would be here
@@ -223,7 +223,7 @@
     }
 
     function getAgeFromDateString(dateString) {
-        print("TIME: " + dateString);
+        //print("TIME: " + dateString);
         var todayNow = new Date();
         var now = todayNow.getTime();
         //YYYY-MM-DDThh:mm:ss:nnn
@@ -239,8 +239,8 @@
         
         var fromTime = Date.UTC(year, month, day, hour, minute, second, millisecond);
         //var from = fromTime.getTime();
-        print("from: " + fromTime);
-        print("now: " + now);
+        //print("from: " + fromTime);
+        //print("now: " + now);
         var age = now - fromTime;
         return age;
     }
