@@ -227,7 +227,7 @@
         //var fromTime = Date.parse(dateString);
         var fromTime = new Date(dateString);
         var from = fromTime.getTime();
-        var age = now - from;
+        var age = now;// - from;
         return age;
     }
 
