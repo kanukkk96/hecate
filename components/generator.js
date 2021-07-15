@@ -223,7 +223,7 @@
     function getAgeFromDateString(dateString) {
         print("TIME: " + dateString);
         var todayNow = new Date();
-        var now = todayNow.getTime();
+        var now = todayNow.UTC();
         //YYYY-MM-DDThh:mm:ss:nnn
         var year = dateString.substr(0, 4);
         var month = "" + (parseInt(dateString.substr(5, 2)) - 1);
@@ -234,7 +234,7 @@
         var millisecond = dateString.substr(20, 3);
         var fromTime = new Date(year, month, day, hour, minute, second, millisecond);
         //var fromTime = Date.parse("" + dateString);
-        var from = fromTime.getTime();
+        var from = fromTime.UTC();
         print("from: " + from);
         print("now: " + now);
         var age = now - from;
