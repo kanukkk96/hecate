@@ -226,7 +226,7 @@
         var now = todayNow.getTime();
         //YYYY-MM-DDThh:mm:ss:nnn
         var year = dateString.substr(0, 4);
-        var month = dateString.substr(5, 2);
+        var month = "" + (parseInt(dateString.substr(5, 2)) - 1);
         var day = dateString.substr(8, 2);
         var hour = dateString.substr(11, 2);
         var minute = dateString.substr(14, 2);
