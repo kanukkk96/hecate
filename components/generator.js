@@ -227,7 +227,7 @@
         //YYYY-MM-DDThh:mm:ss:nnn
         var year =  parseInt(dateString.substr(0, 4));
         var month = parseInt(dateString.substr(5, 2)) - 1;
-        var month =  parseInt(dateString.substr(5, 2));
+        //var month =  parseInt(dateString.substr(5, 2));
         var day =  parseInt(dateString.substr(8, 2));
         var hour =  parseInt(dateString.substr(11, 2));
         var minute =  parseInt(dateString.substr(14, 2));
