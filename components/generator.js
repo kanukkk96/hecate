@@ -227,14 +227,13 @@
         var todayNow = new Date();
         var now = todayNow.getTime();
         //YYYY-MM-DDThh:mm:ss:nnn
-        var year =  parseInt(dateString.substr(0, 4));
-        var month = parseInt(dateString.substr(5, 2)) - 1;
-        //var month =  parseInt(dateString.substr(5, 2));
-        var day =  parseInt(dateString.substr(8, 2));
-        var hour =  parseInt(dateString.substr(11, 2));
-        var minute =  parseInt(dateString.substr(14, 2));
-        var second =  parseInt(dateString.substr(17, 2));
-        var millisecond =  parseInt(dateString.substr(20, 3));
+        var year =  parseInt(dateString.substr(0, 4),10);
+        var month = parseInt(dateString.substr(5, 2),10) - 1;
+        var day =  parseInt(dateString.substr(8, 2),10);
+        var hour =  parseInt(dateString.substr(11, 2),10);
+        var minute =  parseInt(dateString.substr(14, 2),10);
+        var second =  parseInt(dateString.substr(17, 2),10);
+        var millisecond =  parseInt(dateString.substr(20, 3),10);
         //var fromTime = new Date(year, month, day, hour, minute, second, millisecond);
         
         var fromTime = Date.UTC(year, month, day, hour, minute, second, millisecond);
