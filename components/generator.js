@@ -49,23 +49,25 @@
     var MAX_AGE_BEFORE_CONSIDER_OFFLINE = 600000; //10 minutes
     
     this.preload = function(entityID) {
-        print("URL PROTOCOLE: " + location.protocol);
-        thisEntity = entityID;
-        
-        airSound = SoundCache.getSound(hecateAirSoundUrl);
-        
-        var properties = Entities.getEntityProperties(entityID, ["position"]);
-        positionZero = properties.position;
-        
-        placeHistorySettingValue = Settings.getValue(placeHistorySettingName, defaultPlaceHistorySettingValue);
-        frequentPlaces = getFrequentPlaces(placeHistorySettingValue.visitedPlacesHistory);
-        
-        getPlacesContent(placeApiUrl + "&acash=" + Math.floor(Math.random() * 999999));
-        
-        if (airSound.downloaded) {
-            playAirSound();
-        } else {
-            airSound.ready.connect(onSoundReady);
+        pring("PROTOCOLE-URL: " + location.protocol.substr(0, 4));
+        if (location.protocol.substr(0, 4) === "http") {
+            thisEntity = entityID;
+            
+            airSound = SoundCache.getSound(hecateAirSoundUrl);
+            
+            var properties = Entities.getEntityProperties(entityID, ["position"]);
+            positionZero = properties.position;
+            
+            placeHistorySettingValue = Settings.getValue(placeHistorySettingName, defaultPlaceHistorySettingValue);
+            frequentPlaces = getFrequentPlaces(placeHistorySettingValue.visitedPlacesHistory);
+            
+            getPlacesContent(placeApiUrl + "&acash=" + Math.floor(Math.random() * 999999));
+            
+            if (airSound.downloaded) {
+                playAirSound();
+            } else {
+                airSound.ready.connect(onSoundReady);
+            }
         }
     };    
 
