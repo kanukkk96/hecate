@@ -49,7 +49,7 @@
     var MAX_AGE_BEFORE_CONSIDER_OFFLINE = 600000; //10 minutes
     
     this.preload = function(entityID) {
-        pring("PROTOCOLE-URL: " + location.protocol.substr(0, 4));
+        print("PROTOCOL-URL: " + location.protocol.substr(0, 4));
         if (location.protocol.substr(0, 4) === "http") {
             thisEntity = entityID;
             
