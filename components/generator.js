@@ -49,6 +49,7 @@
     var MAX_AGE_BEFORE_CONSIDER_OFFLINE = 600000; //10 minutes
     
     this.preload = function(entityID) {
+        print("URL PROTOCOLE: " + location.protocol);
         thisEntity = entityID;
         
         airSound = SoundCache.getSound(hecateAirSoundUrl);
