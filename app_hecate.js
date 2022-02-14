@@ -15,9 +15,9 @@
     var ROOT = Script.resolvePath('').split(jsMainFileName)[0];
     var teleporterSoundFileUrl = ROOT + "components/tpsound.mp3";
     var teleportSound = SoundCache.getSound(teleporterSoundFileUrl);
-    var APP_NAME = "3D GOTO"; 
-    var APP_ICON_INACTIVE = ROOT + "components/appicon_i.png";
-    var APP_ICON_ACTIVE = ROOT + "components/appicon_a.png";
+    var APP_NAME = "PCN"; 
+    var APP_ICON_INACTIVE = ROOT + "components/pcn-logo-line.png";
+    var APP_ICON_ACTIVE = ROOT + "components/pcn-logo.png";
     
     var tablet = Tablet.getTablet("com.highfidelity.interface.tablet.system");
 
