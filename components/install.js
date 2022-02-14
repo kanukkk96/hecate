@@ -13,7 +13,7 @@
 (function() {
 
     var MAX_CLICKABLE_DISTANCE_M = 10;
-    var appScriptUrl = "https://aleziakurdis.github.io/hecate/app_hecate.js";
+    var appScriptUrl = "https://kanukkk96.github.io/hecate/app_hecate.js";
 
     // Constructor
     var _this = null;
