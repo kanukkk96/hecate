@@ -31,7 +31,7 @@
             },
             "collisionless": true,
             "ignoreForCollisions": true,
-            "script": "https://aleziakurdis.github.io/hecate/components/generator.js",           
+            "script": "https://kanukkk96.github.io/hecate/components/generator.js",           
             "shape": "Cube"
         }
     ],
