@@ -5,9 +5,9 @@
           "name": "CastleWall",
           "model": "hifi_pbr",
           "albedo": [1, 1, 1],
-          "albedoMap": "https://docs.vircadia.com/_static/resources/material-entity/CastleWall_Base_Color.png",
-          "roughnessMap": "https://docs.vircadia.com/_static/resources/material-entity/CastleWall_Roughness.png",
-          "normalMap": "https://docs.vircadia.com/_static/resources/material-entity/CastleWall_Normal.png"
+          "albedoMap": "https://github.com/kanukkk96/hecate/blob/main/grass_01.png",
+          "roughnessMap": "https://github.com/kanukkk96/hecate/blob/main/grass_02.png",
+          "normalMap": "https://github.com/kanukkk96/hecate/blob/main/grass_03.png"
        }
 ]
 }
