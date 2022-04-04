@@ -2,8 +2,8 @@
     "materialVersion": 1,
     "materials": [
        {
-          "name": "CastleWall",
-          "model": "hifi_pbr",
+          "name": "Field_grass",
+          "model": "hifi_field_grass",
           "albedo": [1, 1, 1],
           "albedoMap": "https://github.com/kanukkk96/hecate/blob/main/grass_01.png",
           "roughnessMap": "https://github.com/kanukkk96/hecate/blob/main/grass_02.png",
